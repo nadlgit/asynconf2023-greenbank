@@ -9,16 +9,24 @@ import { useData } from './use-data';
 export const App = () => {
   const [loanRate, setLoanRate] = useState<number>();
   const { carTypes, energies, compute } = useData();
+
+  const resetLoanRate = () => setLoanRate(undefined);
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     e.stopPropagation();
     const rawData = new FormData(e.target as HTMLFormElement);
-    const data: { [fieldName: string]: string } = {};
-    for (const [key, value] of rawData) {
-      data[key] = value as string;
-    }
-    setLoanRate(compute(data));
+    setLoanRate(
+      compute({
+        carType: String(rawData.get('carType')),
+        energy: String(rawData.get('energy')),
+        year: Number(rawData.get('year')),
+        distance: Number(rawData.get('distance')),
+        passengers: Number(rawData.get('passengers')),
+      })
+    );
   };
+
   return (
     <main>
       <h1>Simulateur de prêt auto</h1>
@@ -34,13 +42,40 @@ export const App = () => {
 
       <form onSubmit={handleSubmit}>
         <FormSection label="Votre futur véhicule">
-          <FormSelect id="carType" label="Type" values={carTypes} />
-          <FormSelect id="energy" label="Energie" values={energies} />
-          <FormNumericInput id="year" label="Année de fabrication" />
+          <FormSelect
+            id="carType"
+            label="Type"
+            values={carTypes}
+            required
+            onChange={resetLoanRate}
+          />
+          <FormSelect
+            id="energy"
+            label="Energie"
+            values={energies}
+            required
+            onChange={resetLoanRate}
+          />
+          <FormNumericInput
+            id="year"
+            label="Année de fabrication"
+            required
+            onChange={resetLoanRate}
+          />
         </FormSection>
         <FormSection label="Votre utilisation">
-          <FormNumericInput id="distance" label="Kilométrage annuel" />
-          <FormNumericInput id="passengers" label="Nombre de passagers" />
+          <FormNumericInput
+            id="distance"
+            label="Kilométrage annuel"
+            required
+            onChange={resetLoanRate}
+          />
+          <FormNumericInput
+            id="passengers"
+            label="Nombre de passagers"
+            required
+            onChange={resetLoanRate}
+          />
         </FormSection>
         <button>Calculer le taux</button>
       </form>

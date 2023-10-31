@@ -52,10 +52,20 @@ button {
   padding: 2rem;
   display: grid;
   gap: 1rem;
-  background-color: #d9f99d;
+  background-color: rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: 600;
+  animation: appear 0.1s;
 }
 .simulation-result > :last-child {
   font-size: 2em;
+}
+
+@keyframes appear {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
 }
