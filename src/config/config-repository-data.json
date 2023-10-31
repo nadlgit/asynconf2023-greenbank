@@ -1,0 +1,46 @@
+{
+  "loanBase": [
+    { "scoreMin": 0, "scoreMax": 10, "rate": 3 },
+    { "scoreMin": 11, "scoreMax": 15, "rate": 2.74 },
+    { "scoreMin": 16, "scoreMax": 25, "rate": 2.52 },
+    { "scoreMin": 26, "scoreMax": 33, "rate": 2.1 },
+    { "scoreMin": 34, "scoreMax": null, "rate": 1.85 }
+  ],
+  "loanPenalty": [
+    { "passengerMin": 1, "passengerMax": 1, "rate": 0.11 },
+    { "passengerMin": 2, "passengerMax": 2, "rate": -0.17 },
+    { "passengerMin": 3, "passengerMax": 3, "rate": -0.29 },
+    { "passengerMin": 4, "passengerMax": null, "rate": -0.53 }
+  ],
+  "scoreData": {
+    "carType": [
+      { "name": "Citadine", "score": 8 },
+      { "name": "Cabriolet", "score": 6 },
+      { "name": "Berline", "score": 6.5 },
+      { "name": "SUV / 4x4", "score": 4 }
+    ],
+    "automotiveEnergy": [
+      { "name": "Essence", "score": 5 },
+      { "name": "Electrique", "score": 9 },
+      { "name": "Gaz", "score": 6 },
+      { "name": "Diesel", "score": 4 },
+      { "name": "Hybride", "score": 7 }
+    ],
+    "yearOfConstruction": [
+      { "min": 1960, "max": 1969, "score": 1 },
+      { "min": 1970, "max": 1979, "score": 2 },
+      { "min": 1980, "max": 1989, "score": 3 },
+      { "min": 1990, "max": 1999, "score": 4 },
+      { "min": 2000, "max": 2009, "score": 5 },
+      { "min": 2010, "max": null, "score": 7 }
+    ],
+    "yearlyKilometers": [
+      { "min": 0, "max": 4999, "score": 10 },
+      { "min": 5000, "max": 9999, "score": 9 },
+      { "min": 10000, "max": 14999, "score": 7 },
+      { "min": 15000, "max": 19999, "score": 5 },
+      { "min": 20000, "max": 24999, "score": 3 },
+      { "min": 25000, "max": 29999, "score": 1 }
+    ]
+  }
+}
