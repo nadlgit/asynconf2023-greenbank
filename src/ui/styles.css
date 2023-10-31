@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 1rem;
+  background-color: #f7fee7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-block: 1rem;
+}
+
+p {
+  margin-block: 0.75rem;
+}
+
+form {
+  margin-block: 1rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+fieldset {
+  width: 100%;
+}
+
+legend {
+  font-weight: 600;
+}
+
+.form-item {
+  margin-block: 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(6rem, 30%) 1fr;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  background-color: #84cc16;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.simulation-result {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  background-color: #d9f99d;
+  text-align: center;
+  font-weight: 600;
+}
+.simulation-result > :last-child {
+  font-size: 2em;
+}

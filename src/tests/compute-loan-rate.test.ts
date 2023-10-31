@@ -1,5 +1,5 @@
-import { jsonConfigRepository } from '~/config/json-config-repository';
 import { computeLoanRate } from '~/core/compute-loan-rate';
+import { jsonConfigRepository } from '~/data/json-config-repository';
 import { StubConfigRepository } from './stub-config-repository';
 
 describe('computeLoanRate', () => {

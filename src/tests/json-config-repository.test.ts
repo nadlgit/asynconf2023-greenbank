@@ -1,4 +1,4 @@
-import { jsonConfigRepository } from '~/config/json-config-repository';
+import { jsonConfigRepository } from '~/data/json-config-repository';
 
 describe('jsonConfigRepository', () => {
   it.each([
